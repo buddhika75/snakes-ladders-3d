@@ -4,6 +4,10 @@ A browser game in Three.js. It has a 3D board, snakes that move, wooden ladders,
 
 ## Play
 
+**▶ Play online: https://buddhika75.github.io/snakes-ladders-3d/**
+
+Or run it locally:
+
 ```
 python -m http.server 8765
 ```
