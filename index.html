@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Snakes &amp; Ladders 3D</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐍</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+<div id="app"></div>
+
+<header class="title glass">
+  <div class="logo">🐍</div>
+  <div><h1>Snakes &amp; Ladders</h1><p>3D Edition</p></div>
+</header>
+
+<div class="toolbar">
+  <button id="btnSound" class="icon glass" title="Sound effects on/off" aria-label="Sound">🔊</button>
+  <button id="btnMusic" class="icon glass" title="Music on/off" aria-label="Music">🎵</button>
+  <button id="btnSpeed" class="icon glass" title="Animation speed" aria-label="Speed">1×</button>
+  <button id="btnNew" class="icon glass" title="New game" aria-label="New game">↺</button>
+</div>
+
+<aside id="players" class="glass"></aside>
+
+<aside id="log" class="glass">
+  <h2>Game log</h2>
+  <ul id="logList"></ul>
+</aside>
+
+<div id="controls">
+  <div id="turnText"></div>
+  <button id="rollBtn" class="roll" disabled>🎲 Roll</button>
+  <div class="hint">Space to roll · drag to orbit · scroll to zoom</div>
+</div>
+
+<div id="toast"></div>
+
+<div id="startScreen" class="overlay">
+  <div class="card glass">
+    <div class="big-logo">🐍 🎲 🪜</div>
+    <h2>Snakes &amp; Ladders 3D</h2>
+    <p>Climb the ladders, dodge the snakes, land exactly on 100 to win.<br>Rolling a 6 gives you another turn.</p>
+    <div class="modes">
+      <button class="mode" data-mode="cpu">🧑 You vs 🤖 Computer</button>
+      <button class="mode" data-mode="p2">👥 2 Players</button>
+      <button class="mode" data-mode="p3">👥 3 Players</button>
+      <button class="mode" data-mode="p4">👥 4 Players</button>
+      <button class="mode demo" data-mode="demo">🍿 Watch a CPU battle</button>
+    </div>
+  </div>
+</div>
+
+<div id="winScreen" class="overlay hidden">
+  <div class="card glass">
+    <div class="trophy">🏆</div>
+    <h2 id="winText">Winner!</h2>
+    <p id="winSub"></p>
+    <button id="againBtn" class="mode">Play again</button>
+  </div>
+</div>
+
+<div id="loading">Building the 3D board…</div>
+
+<script type="module" src="game.js"></script>
+</body>
+</html>
